@@ -1,0 +1,771 @@
+   <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rawans Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+       /* Main Background */
+body {
+    background-color: #292929;
+    color: #FFFFFF;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #292929;
+    border-bottom: 1px solid #414141;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #FFFFFF;
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+    color: #B98A68;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF;
+}
+
+/* Brown Accent */
+.accent {
+    color: #C49A78;
+}
+
+/* Paragraphs */
+p,
+.soft-text {
+    color: #E0E0E0;
+}
+
+/* Modern Section Cards */
+.section-card {
+    background: linear-gradient(
+        145deg,
+        #393939,
+        #303030
+    );
+    color: #FFFFFF;
+    border: 1px solid #51463E;
+    border-radius: 18px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Card Hover Effect */
+.section-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    border-color: #B98A68;
+}
+/* Buttons */
+.main-button {
+    background-color: #80583E;
+    color: #FFFFFF;
+    border: 1px solid #80583E;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.main-button:hover {
+    background-color: #B98A68;
+    color: #FFFFFF;
+    border-color: #B98A68;
+}
+
+/* Project Badges */
+.badge {
+    background-color: #B98A68 !important;
+    color: #292929 !important;
+}
+
+/* Contact Links */
+a {
+    color: #B98A68;
+}
+
+a:hover {
+    color: #D0AA86;
+}
+
+/* Footer */
+footer {
+    background-color: #292929;
+    color: #E0E0E0;
+    border-top: 1px solid #414141;
+}
+/* Cards pop out when clicked */
+.section-card {
+    cursor: pointer;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* Lift the card on click */
+.section-card:active {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-color: #B98A68;
+}
+
+/* Hover effect for computers */
+@media (hover: hover) {
+    .section-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        border-color: #B98A68;
+    }
+}
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .row {
+    row-gap: 16px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+/* Mobile Responsive Design */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 16px;
+  }
+
+  h1 {
+    font-size: clamp(30px, 8vw, 42px);
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .row {
+    row-gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  button,
+  .btn {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  nav a {
+    padding: 6px;
+  }
+}
+/* Cards click animation */
+.section-card {
+    cursor: pointer;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.section-card.is-active {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    border-color: #B98A68;
+}
+
+@media (max-width: 768px) {
+    .section-card.is-active {
+        transform: translateY(-4px);
+    }
+}
+
+/* Smooth button effects */
+.main-button {
+    transition: all 0.3s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(196, 154, 120, 0.3);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* Reveal elements while scrolling */
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        transition: none;
+        transform: none;
+    }
+}
+
+
+@keyframes testMove {
+    from {
+        opacity: 0.2;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger the cards */
+#skills .section-card:nth-child(1),
+#projects .section-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+#skills .section-card:nth-child(2),
+#projects .section-card:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+#skills .section-card:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        transition: none;
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* Button animation */
+.main-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(196, 154, 120, 0.3);
+}
+
+@keyframes testMove {
+    from {
+        opacity: 0.2;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: testMove 1s ease;
+}
+/* Hero Section */
+#home {
+    display: flex;
+    align-items: center;
+    min-height: 75vh;
+    position: relative;
+}
+
+#home h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+    text-shadow: 0 5px 25px rgba(196, 154, 120, 0.15);
+}
+
+#home h2 {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#home p {
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+/* Hero Button */
+#home .main-button,
+#home .btn.main-button {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(185, 138, 104, 0.15);
+}
+
+/* Section Headings */
+section h2 {
+    letter-spacing: -0.5px;
+}
+
+@media (max-width: 768px) {
+    #home {
+        min-height: 60vh;
+    }
+
+    #home h1 {
+        letter-spacing: -1px;
+    }
+}
+/* Skills and Projects Headings */
+#skills h2,
+#projects h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    margin-bottom: 28px;
+}
+
+#skills .section-card,
+#projects .section-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+/* Brown Accent Line */
+#skills .section-card::before,
+#projects .section-card::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 45px;
+    background: #B98A68;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: width 0.3s ease;
+}
+
+#skills .section-card:hover::before,
+#projects .section-card:hover::before {
+    width: 85px;
+}
+
+/* Skill Titles */
+#skills .section-card h3 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+/* Project Labels */
+#projects .section-card .badge {
+    display: inline-block;
+    padding: 7px 12px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+/* Smooth Section Spacing */
+#skills,
+#projects,
+#contact {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+/* One-time Name Animation */
+#home h1 {
+    animation: nameEntrance 1.2s ease-out both;
+}
+
+@keyframes nameEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg py-3">
+        <div class="container">
+
+            <a class="navbar-brand brand fw-bold fs-3"
+               href="#home">
+                rawan's portfolio
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+           data-bs-toggle="collapse" 
+                    data-bs-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    style="background-color:#D0AA86;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <div class="navbar-nav ms-auto gap-lg-3">
+                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#skills">Skills</a>
+                    <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Home -->
+    <section id="home" class="container py-5">
+        <div class="row align-items-center"
+             style="min-height: 65vh;">
+
+            <div class="col-lg-9 py-5">
+
+                <p class="accent fw-bold"
+                   style="letter-spacing: 3px;">
+                    HELLO, I'M
+                </p>
+
+                <h1 class="display-2 fw-bold mb-3">
+                    Rawan Mahmoud
+                </h1>
+
+                <h2 class="h3 accent mb-4">
+                    Aspiring Front-End Developer
+                </h2>
+
+                <p class="fs-5 soft-text mb-4">
+                    I'm learning to build beautiful and useful websites,
+                    one project at a time.
+                </p>
+
+                <a href="#projects"
+                   class="btn main-button">
+                    Explore My Projects →
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="container py-5">
+
+        <div class="section-card">
+            <p class="accent fw-bold">GET TO KNOW ME</p>
+
+            <h2 class="fw-bold mb-4">About Me</h2>
+
+            <p class="fs-5 soft-text mb-0">
+                I'm Rawan, a Management Information Systems student
+                learning Front-End Development. I'm building my skills
+                step by step and creating projects to practice what
+                I learn.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills" class="container py-5">
+
+        <p class="accent fw-bold">WHAT I'M LEARNING</p>
+        <h2 class="fw-bold mb-4">My Skills</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="section-card">
+                    <h3 class="h4 accent mb-3">HTML</h3>
+                    <p class="soft-text mb-0">
+                        Learning how to structure web pages
+                        using HTML.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="section-card">
+                    <h3 class="h4 accent mb-3">CSS</h3>
+                    <p class="soft-text mb-0">
+                        Learning colors, layouts, and how to
+                        style websites.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="section-card">
+                    <h3 class="h4 accent mb-3">JavaScript</h3>
+                    <p class="soft-text mb-0">
+                        Learning to build responsive websites
+                        for different screen sizes.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects" class="container py-5">
+
+        <p class="accent fw-bold">MY WORK</p>
+        <h2 class="fw-bold mb-4">My Projects</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+                <div class="section-card">
+
+                    <p class="accent small fw-bold">
+                        PROJECT 01
+                    </p>
+
+                    <h3 class="h4 mb-3">
+                        Personal Portfolio
+                    </h3>
+
+                    <p class="soft-text">
+                        My first personal website, designed to
+                        introduce me and share my learning journey.
+                    </p>
+
+                    <span class="badge rounded-pill"
+                          style="background:#D0AA86;color:#24160F;">
+                        HTML
+                    </span>
+
+        
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="section-card">
+
+                    <p class="accent small fw-bold">
+                        PROJECT 02
+                    </p>
+
+                    <h3 class="h4 mb-3">
+                        Coming Soon
+                    </h3>
+
+                    <p class="soft-text">
+                        My next project will be added here as I
+                        continue learning and practicing.
+                    </p>
+
+                    <span class="badge rounded-pill"
+                          style="background:#D0AA86;color:#24160F;">
+                        In Progress
+                    </span>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="container py-5">
+
+        <div class="section-card text-center">
+
+            <p class="accent fw-bold">GET IN TOUCH</p>
+
+            <h2 class="fw-bold mb-3">
+                Let's Connect
+            </h2>
+
+            <p class="soft-text mb-4">
+                Thanks for visiting my portfolio.
+                I'm always learning and working on new ideas.
+            </p>
+
+           <a href="mailto:arafarawan24@gmail.com"class="btn main-button">
+    Contact Me
+</a>
+        </div> 
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-4">
+        <p class="mb-0">
+            © Rawan Portfolio
+        </p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.querySelectorAll('.section-card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('is-active');
+    });
+});
+</script>
+<script>
+const revealItems = document.querySelectorAll(
+    '#about, #skills, #projects, #contact, .section-card'
+);
+
+revealItems.forEach(item => {
+    item.classList.add('reveal');
+});
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+revealItems.forEach(item => observer.observe(item));
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(
+        "#about, #skills, #projects, #contact, .section-card"
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    items.forEach((item) => {
+        item.classList.add("reveal");
+        observer.observe(item);
+    });
+});
+
+</script>
+</body>
+</html>
